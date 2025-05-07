@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Video-Enhanced Offline Reinforcement Learning: A Model-Based Approach">
+    <meta name="keywords" content="Offline Reinforcement Learning, Model-based Reinforcement Learning, Visuomotor Control">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video-Enhanced Offline Reinforcement Learning: A Model-Based Approach</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Jost"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <!--    <link rel="icon" href="./static/images/favicon.png">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title"><span class="textsc">Video-Enhanced Offline Reinforcement Learning: A Model-Based Approach </h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            Minting Pan,
+                            Yitao Zheng,
+                            Jiajian Li,
+                            <a href="https://wyb15.github.io/" target="_blank">Yunbo Wang</a><sup>†</sup>,
+                            Xiaokang Yang
+                        </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">MoE Key Lab of Artificial Intelligence, AI Institute, Shanghai Jiao Tong University</span>
+                        <span class="author-block"><sup>†</sup>Corresponding author: Yunbo Wang</span>
+                    </div>
+
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2407.20908"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fas fa-file-pdf"></i>
+                                  </span>
+                                  <span>Paper</span>
+                                </a>
+                            </span>
+                            <!-- Code Link -->
+                            <span class="link-block">
+                                <a href="https://github.com/panmt/VeoRL"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fab fa-github"></i>
+                                  </span>
+                                  <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="content has-text-justified">
+                <h3 class="title is-3 is-centered has-text-centered">Results on Meta-World</h3>
+            </div>
+
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-fullbody">
+                    <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/Meta-World/drawer_open.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-steve">
+                    <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/Meta-World/handle_press.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-fullbody">
+                    <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/Meta-World/coffee_push.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-chair-tp">
+                    <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/Meta-World/button_press.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-blueshirt">
+                    <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/Meta-World/handle_pull"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-blueshirt">
+                    <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/Meta-World/plate_slide.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="content has-text-justified">
+                <h3 class="title is-3 is-centered has-text-centered">Results on CARLA</h3>
+            </div>
+
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-fullbody">
+                    <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/CARLA/carla.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="content has-text-justified">
+                <h3 class="title is-3 is-centered has-text-centered">Results on MineDojo</h3>
+            </div>
+
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-shiba">
+                    <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/MineDojo/plains.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-shiba">
+                    <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/MineDojo/water.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-blueshirt">
+                    <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                        <source src="videos/MineDojo/sand.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="hero is-light">
+    <div class="hero-body">
+        <div class="container">
+            <div class="content has-text-justified">
+                <h3 class="title is-3 is-centered has-text-centered">Demo</h3>
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+                <div class="content has-text-justified">
+                    <video poster="" id="chair-tp" autoplay controls loop playsinline height="80%">
+                        <source src="videos/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <!--            <div class="columns is-centered has-text-centered">-->
+            <!--                <div class="column">-->
+            <!--                    <h4 class="is-4">-->
+            <!--                        These videos are synthesized with novel time and view with sparse time-view images as input.-->
+            <!--                    </h4>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+            <h2 class="title is-3 is-centered has-text-centered">Overview of VeoRL</h2>
+            <!--            <p>-->
+            <!--                The HyperNeRF architecture is a straightforward extension to Nerfies. The key difference is-->
+            <!--                that the template NeRF is conditioned on additional higher-dimensional coordinates, where-->
+            <!--                the higher dimensional coordinates are given by an "ambient slicing surface" which can be-->
+            <!--                thought of as a higher dimensional analog to the deformation field.-->
+            <!--            </p>-->
+            <div class="has-text-centered">
+                <img style="width: 90%;" src="images/pipeline.png"
+                     alt="HyperNeRF architecture."/>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Offline reinforcement learning (RL) optimizes control policies using static datasets, reducing the need for costly and potentially unsafe exploration in real-world scenarios. 
+                      However, it faces key challenges, particularly value overestimation due to the lack of an interactive environment. 
+                      In this paper, we introduce \textit{Video-Enhanced Offline RL} (VeoRL), a novel model-based RL approach that builds an interactive world model using a diverse collection of unlabeled, heterogeneous video data—freely accessible and potentially unlimited from the Internet. 
+                      Through model-based policy optimization, VeoRL effectively transfers commonsense knowledge of control behaviors and physical dynamics, extracted from natural videos, to the RL agent. 
+                      Our approach demonstrates substantial improvements over existing offline RL methods across a wide range of visuomotor control tasks, including robotic manipulation, autonomous driving, and open-world video games, delivering over a $100\%$ performance boost on multiple tasks.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code> 
+            @inproceedings{
+                pan2025veorl,
+                title={Video-Enhanced Offline Reinforcement Learning: A Model-Based Approach},
+                author={Minting Pan and Yitao Zheng and Jiajian Li and Yunbo Wang and Xiaokang Yang},
+                booktitle={ICML},
+                year={2025}
+            }
+</code></pre>
+    </div>
+</section>
+
+
+<footer class="footer is-center">
+    <div class="container">
+        <div class="content has-text-centered">
+            <a class="icon-link" href="https://github.com/zyp123494/DynaVol/tree/main" class="external-link"
+               disabled>
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        We thank the authors of <a href="https://github.com/nerfies/nerfies.github.io"><span
+                            class="textsc">Nerfies</span></a> that kindly open sourced the template of this website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
