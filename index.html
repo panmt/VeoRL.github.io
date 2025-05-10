@@ -7,6 +7,10 @@
     <meta name="keywords" content="Offline Reinforcement Learning, Model-based Reinforcement Learning, Visuomotor Control">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Video-Enhanced Offline Reinforcement Learning: A Model-Based Approach</title>
+<!--         <div class="is-size-5 publication-venue">
+            <a> RLC 2024</a>
+        </div> -->
+    <h2 class="title is-3 publication-subtitle" style="color:#f41c1c">ICML 2025</h2>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -96,6 +100,92 @@
 </section>
 
 
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                    Offline reinforcement learning (RL) enables policy optimization using static datasets, avoiding the risks and costs of extensive real-world exploration. 
+                    However, it struggles with suboptimal offline behaviors and inaccurate value estimation due to the lack of environmental interaction. 
+                    In this paper, we present Video-Enhanced Offline RL (VeoRL), a model-based approach that constructs an interactive world model from diverse, unlabeled video data readily available online. 
+                    Leveraging model-based behavior guidance, VeoRL transfers commonsense knowledge of control policy and physical dynamics from natural videos to the RL agent within the target domain. 
+                    Our method achieves substantial performance gains (exceeding 100% in some cases) across visuomotor control tasks in robotic manipulation, autonomous driving, and open-world video games.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+
+    </div>
+</section>
+
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+            <h2 class="title is-3 is-centered has-text-centered">Overview of VeoRL</h2>
+                       <p>
+                           We extract latent behavior abstractions from task-agnostic, unannotated natural video data to enrich the world model's commonsense understanding of the physical world. 
+                           By interacting with this world model, the agent performs policy optimization guided explicitly by the latent policies learned from the natural videos. 
+                           Overall performance of VeoRL demonstrates significant improvements over existing offline RL methods across different visuomotor control benchmarks, 
+                           including Meta-World robotic manipulation, CARLA autonomous driving, and Minecraft open-world video games. 
+                       </p>
+            <div class="has-text-centered">
+                <img style="width: 90%;" src="static/images/intro.png"
+                     alt="intro"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+            <h2 class="title is-3 is-centered has-text-centered">Model architecture</h2>
+                       <p>
+                           (a) We construct a discrete, high-level latent action space by training the BAN, enabling forward dynamics modeling independent of real actions.
+                           (b) The visualization of model-based actor-critic learning at a single rollout step. 
+                           We leverage behavior cloning module to replay the video-informed latent behaviors, serving as the inputs of the actor and critic for producing goal-conditioned policies and value estimations, as well as the plan net for generating a long-term state rollout.
+                       </p>
+            <div class="has-text-centered">
+                <img style="width: 90%;" src="static/images/model_policy.png"
+                     alt="model_policy"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="hero is-light">
+    <div class="hero-body">
+        <div class="container">
+            <div class="content has-text-justified">
+                <h3 class="title is-3 is-centered has-text-centered">Demo</h3>
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+                <div class="content has-text-justified">
+                    <video poster="" id="chair-tp" autoplay controls loop playsinline height="80%">
+                        <source src="static/videos/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    
+    
+    
 <section class="hero is-light is-small">
     <div class="hero-body">
         <div class="container">
@@ -203,87 +293,6 @@
     </div>
 </section>
 
-
-
-
-<section class="hero is-light">
-    <div class="hero-body">
-        <div class="container">
-            <div class="content has-text-justified">
-                <h3 class="title is-3 is-centered has-text-centered">Demo</h3>
-            </div>
-
-            <div class="columns is-centered has-text-centered">
-                <div class="content has-text-justified">
-                    <video poster="" id="chair-tp" autoplay controls loop playsinline height="80%">
-                        <source src="static/videos/demo.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="content has-text-justified">
-            <h2 class="title is-3 is-centered has-text-centered">Overview of VeoRL</h2>
-                       <p>
-                           We extract latent behavior abstractions from task-agnostic, unannotated natural video data to enrich the world model's commonsense understanding of the physical world. 
-                           By interacting with this world model, the agent performs policy optimization guided explicitly by the latent policies learned from the natural videos. 
-                           Overall performance of VeoRL demonstrates significant improvements over existing offline RL methods across different visuomotor control benchmarks, 
-                           including Meta-World robotic manipulation, CARLA autonomous driving, and Minecraft open-world video games. 
-                       </p>
-            <div class="has-text-centered">
-                <img style="width: 90%;" src="static/images/intro.png"
-                     alt="intro"/>
-            </div>
-        </div>
-    </div>
-</section>
-
-    
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="content has-text-justified">
-            <h2 class="title is-3 is-centered has-text-centered">Model architecture</h2>
-                       <p>
-                           (a) We construct a discrete, high-level latent action space by training the BAN, enabling forward dynamics modeling independent of real actions.
-                           (b) The visualization of model-based actor-critic learning at a single rollout step. 
-                           We leverage behavior cloning module to replay the video-informed latent behaviors, serving as the inputs of the actor and critic for producing goal-conditioned policies and value estimations, as well as the plan net for generating a long-term state rollout.
-                       </p>
-            <div class="has-text-centered">
-                <img style="width: 90%;" src="static/images/model_policy.png"
-                     alt="model_policy"/>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="section">
-    <div class="container is-max-desktop">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        Offline reinforcement learning (RL) optimizes control policies using static datasets, reducing the need for costly and potentially unsafe exploration in real-world scenarios. 
-                      However, it faces key challenges, particularly value overestimation due to the lack of an interactive environment. 
-                      In this paper, we introduce Video-Enhanced Offline RL (VeoRL), a novel model-based RL approach that builds an interactive world model using a diverse collection of unlabeled, heterogeneous video data—freely accessible and potentially unlimited from the Internet. 
-                      Through model-based policy optimization, VeoRL effectively transfers commonsense knowledge of control behaviors and physical dynamics, extracted from natural videos, to the RL agent. 
-                      Our approach demonstrates substantial improvements over existing offline RL methods across a wide range of visuomotor control tasks, including robotic manipulation, autonomous driving, and open-world video games, delivering over a 100% performance boost on multiple tasks.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--/ Abstract. -->
-
-    </div>
-</section>
 
 
 <section class="section" id="BibTeX">
