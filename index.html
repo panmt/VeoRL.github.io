@@ -181,7 +181,6 @@
     
     
     
-    
 <section class="hero is-light is-small">
     <div class="hero-body">
         <div class="container">
@@ -189,42 +188,78 @@
                 <h3 class="title is-3 is-centered has-text-centered">Results on Meta-World</h3>
             </div>
 
+            <style>
+                /* 确保视频容器和文字垂直排列 */
+                .carousel .item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;  /* 视频与文字间距 */
+                }
+
+                /* 文字样式 */
+                .carousel .item span {
+                    color: #333;        /* 深色文字 */
+                    font-size: 1.2rem;
+                    /* font-weight: 500; */
+                    margin-top: 0px;     /* 顶部间距 */
+                    text-align: center; /* 文字居中 */
+                    /* font-size: 16px; */
+                    font-weight: bold;
+                }
+
+                /* 控制视频高度留出文字空间 */
+                .carousel video {
+                    height: 450px;       /* 固定视频高度 */
+                    object-fit: cover;   /* 保持视频比例 */
+                    /* width: 100%; */
+                    /* max-width: 300px; */
+                    /* border-radius: 10px; */
+                }
+            </style>
+            
             <div id="results-carousel" class="carousel results-carousel">
                 <div class="item item-fullbody">
                     <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
                         <source src="static/videos/Meta-World/drawer_open.mp4"
                                 type="video/mp4">
                     </video>
+                    <span>Drawer Open</span>
                 </div>
                 <div class="item item-steve">
                     <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
                         <source src="static/videos/Meta-World/handle_press.mp4"
                                 type="video/mp4">
                     </video>
+                    <span>Handle Press</span>
                 </div>
                 <div class="item item-fullbody">
                     <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
                         <source src="static/videos/Meta-World/coffee_push.mp4"
                                 type="video/mp4">
                     </video>
+                    <span>Coffee Push</span>
                 </div>
                 <div class="item item-chair-tp">
                     <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
                         <source src="static/videos/Meta-World/button_press.mp4"
                                 type="video/mp4">
                     </video>
+                    <span>Button Press</span>
                 </div>
                 <div class="item item-blueshirt">
                     <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
                         <source src="static/videos/Meta-World/handle_pull.mp4"
                                 type="video/mp4">
                     </video>
+                    <span>Handle Pull</span>
                 </div>
                 <div class="item item-blueshirt">
                     <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
                         <source src="static/videos/Meta-World/plate_slide.mp4"
                                 type="video/mp4">
                     </video>
+                    <span>Plate Slide</span>
                 </div>
             </div>
         </div>
@@ -269,20 +304,23 @@
             </div>
 
             <div class="columns is-centered" style="gap: 1rem; margin-top: 0rem;">
-                <div class="column">
+                <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/MineDojo/tree.mp4" type="video/mp4">
                     </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest log in plains</span>
                 </div>
-                <div class="column">
+                <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/MineDojo/water.mp4" type="video/mp4">
                     </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest water with bucket</span>
                 </div>
-                <div class="column">
+                <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/MineDojo/sand.mp4" type="video/mp4">
                     </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest sand</span>
                 </div>
             </div>
         </div>
