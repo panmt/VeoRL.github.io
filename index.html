@@ -268,6 +268,7 @@
 
 
 
+
 <section class="hero is-light is-small">
     <div class="hero-body">
         <div class="container">
@@ -276,18 +277,34 @@
             </div>
 
             <!-- 修改后的横向排列容器 -->
-            <div class="columns is-centered is-vcentered" style="gap: 1rem; margin-top: 0rem;">
+            <div class="columns is-centered" style="gap: 1rem; margin-top: 0rem;">
                 <!-- 第一个视频 -->
-                <div class="column">
+                <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/CARLA/carla_1.mp4" type="video/mp4">
                     </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 1 of VeoRL</span>
                 </div>
                 <!-- 第二个视频 -->
-                <div class="column">
+                <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/CARLA/carla_2.mp4" type="video/mp4">
                     </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 2 of VeoRL</span>
+                </div>
+                <!-- 第三个视频 -->
+                <div class="column has-text-centered">
+                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                        <source src="static/videos/Dv2/CARLA/carla_dv2_1.mp4" type="video/mp4">
+                    </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 1 of DreamerV2</span>
+                </div>
+                <!-- 第四个视频 -->
+                <div class="column has-text-centered">
+                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                        <source src="static/videos/Dv2/CARLA/carla_dv2_2.mp4" type="video/mp4">
+                    </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 2 of DreamerV2</span>
                 </div>
             </div>
         </div>
@@ -303,24 +320,47 @@
                 <h3 class="title is-3 is-centered has-text-centered">Results on MineDojo</h3>
             </div>
 
+            <!-- 第一行：前三个视频 -->
             <div class="columns is-centered" style="gap: 1rem; margin-top: 0rem;">
                 <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/MineDojo/tree.mp4" type="video/mp4">
                     </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest log in plains</span>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest log in plains of VeoRL</span>
                 </div>
                 <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/MineDojo/water.mp4" type="video/mp4">
                     </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest water with bucket</span>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest water with bucket of VeoRL</span>
                 </div>
                 <div class="column has-text-centered">
                     <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
                         <source src="static/videos/MineDojo/sand.mp4" type="video/mp4">
                     </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest sand</span>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest sand of VeoRL</span>
+                </div>
+            </div>
+
+            <!-- 第二行：后三个视频 -->
+            <div class="columns is-centered" style="gap: 1rem; margin-top: 2rem;">  <!-- 添加了margin-top -->
+                <div class="column has-text-centered">
+                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                        <source src="static/videos/Dv2/MineDojo/tree/minedojo_dv2_tree.mp4" type="video/mp4"> 
+                    </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest log in plains of DreamerV2</span>
+                </div>
+                <div class="column has-text-centered">
+                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                        <source src="static/videos/Dv2/MineDojo/water/minedojo_dv2_water.mp4" type="video/mp4">
+                    </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest water with bucket of DreamerV2</span>
+                </div>
+                <div class="column has-text-centered">
+                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                        <source src="static/videos/Dv2/MineDojo/sand/minedojo_dv2_sand.mp4" type="video/mp4">
+                    </video>
+                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Harvest sand of DreamerV2</span>
                 </div>
             </div>
         </div>
