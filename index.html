@@ -108,9 +108,9 @@
                     <p>
                     Offline reinforcement learning (RL) enables policy optimization using static datasets, avoiding the risks and costs of extensive real-world exploration. 
                     However, it struggles with suboptimal offline behaviors and inaccurate value estimation due to the lack of environmental interaction. 
-                    We present Video-Enhanced Offline RL (VeoRL), a model-based method that constructs an interactive world model from diverse, unlabeled video data readily available online. 
+                    We present <b>Video-Enhanced Offline RL (VeoRL)</b>, a model-based method that constructs an interactive world model from diverse, unlabeled video data readily available online. 
                     Leveraging model-based behavior guidance, our approach transfers commonsense knowledge of control policy and physical dynamics from natural videos to the RL agent within the target domain. 
-                    VeoRL achieves substantial performance gains (over 100% in some cases) across visual control tasks in robotic manipulation, autonomous driving, and open-world video games.
+                    VeoRL achieves substantial performance gains (over <span class="math">100<span class="math-percent">%</span></span> in some cases) across visual control tasks in robotic manipulation, autonomous driving, and open-world video games.
                     </p>
                 </div>
             </div>
@@ -126,12 +126,12 @@
     <div class="container is-max-desktop">
         <div class="content has-text-justified">
             <h2 class="title is-3 is-centered has-text-centered">Overview of VeoRL</h2>
-                       <p>
+<!--                        <p>
                            We extract latent behavior abstractions from task-agnostic, unannotated natural video data to enrich the world model's commonsense understanding of the physical world. 
                            By interacting with this world model, the agent performs policy optimization guided explicitly by the latent policies learned from the natural videos. 
                            Overall performance of VeoRL demonstrates significant improvements over existing offline RL methods across different visuomotor control benchmarks, 
                            including Meta-World robotic manipulation, CARLA autonomous driving, and Minecraft open-world video games. 
-                       </p>
+                       </p> -->
             <div class="has-text-centered">
                 <img style="width: 90%;" src="static/images/intro.png"
                      alt="intro"/>
@@ -139,25 +139,6 @@
         </div>
     </div>
 </section>
-
-    
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="content has-text-justified">
-            <h2 class="title is-3 is-centered has-text-centered">Model architecture</h2>
-                       <p>
-                           (a) We construct a discrete, high-level latent action space by training the BAN, enabling forward dynamics modeling independent of real actions.
-                           (b) The visualization of model-based actor-critic learning at a single rollout step. 
-                           We leverage behavior cloning module to replay the video-informed latent behaviors, serving as the inputs of the actor and critic for producing goal-conditioned policies and value estimations, as well as the plan net for generating a long-term state rollout.
-                       </p>
-            <div class="has-text-centered">
-                <img style="width: 90%;" src="static/images/model_policy.png"
-                     alt="model_policy"/>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 
 
@@ -368,6 +349,23 @@
 </section>
 
 
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+            <h2 class="title is-3 is-centered has-text-centered">Model architecture</h2>
+                       <p>
+                           (a) We construct a discrete, high-level latent action space by training the BAN, enabling forward dynamics modeling independent of real actions.
+                           (b) The visualization of model-based actor-critic learning at a single rollout step. 
+                           We leverage behavior cloning module to replay the video-informed latent behaviors, serving as the inputs of the actor and critic for producing goal-conditioned policies and value estimations, as well as the plan net for generating a long-term state rollout.
+                       </p>
+            <div class="has-text-centered">
+                <img style="width: 90%;" src="static/images/model_policy.png"
+                     alt="model_policy"/>
+            </div>
+        </div>
+    </div>
+</section>
+    
 
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
