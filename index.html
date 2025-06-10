@@ -175,8 +175,7 @@
                     display: flex;
                     justify-content: center; /* Center the content horizontally */
                     gap: 30px; /* Space between the fixed video and the carousel */
-                    /* REMOVED: flex-wrap: wrap; to keep them on one line */
-                    align-items: flex-start; /* Align items to the top if they have different heights */
+                    align-items: flex-start; /* Align items to the top */
                 }
 
                 /* Style for the fixed video on the left */
@@ -185,27 +184,25 @@
                     flex-direction: column;
                     align-items: center;
                     gap: 10px; /* Space between the video and its label */
-                    /* Prevent this column from shrinking below its content's size */
-                    flex-shrink: 0;
+                    flex-shrink: 0; /* Prevent this column from shrinking */
                 }
 
                 .fixed-video-column video {
-                    height: 450px; /* Fixed height for consistency with carousel videos */
-                    object-fit: cover; /* Maintain aspect ratio */
-                    width: 450px; /* Give it a fixed width to ensure it doesn't try to shrink */
-                    max-width: 100%; /* Ensure it doesn't overflow its container if container is smaller than 450px */
+                    /* Max dimensions to allow scaling down */
+                    max-width: 560px; /* **Maximum width for the source video** */
+                    max-height: 560px; /* **Maximum height for the source video** */
+                    width: auto; /* Allow width to adjust based on aspect ratio */
+                    height: auto; /* Allow height to adjust based on aspect ratio */
+                    /* Crucial for scaling down and showing entire video */
+                    object-fit: contain; /* **Ensures the entire video is visible within its box** */
                 }
 
                 /* Styles specifically for the carousel container */
                 .results-carousel {
-                    /* Allow the carousel to take available space and grow */
                     flex-grow: 1;
-                    /* Prevent carousel from shrinking below a reasonable width */
-                    min-width: 400px; /* Adjust this value based on how small you want the carousel to get */
-                    /* Ensure the carousel doesn't overflow its horizontal space */
+                    min-width: 320px; /* Minimum width for the carousel */
                     overflow-x: auto; /* Adds horizontal scrollbar if content exceeds carousel width */
                 }
-
 
                 /* Styles for individual items within the carousel */
                 .carousel .item {
@@ -225,13 +222,13 @@
 
                 /* Styles for videos inside the carousel */
                 .carousel video {
-                    height: 450px; /* Fixed height for consistency */
-                    object-fit: cover; /* Maintain aspect ratio */
-                    width: 450px; /* Give carousel videos a fixed width as well */
-                    max-width: 100%; /* Ensure videos fit within carousel slides */
+                    /* Match the scaling behavior of the fixed video */
+                    max-width: 400px; /* **Maximum width for carousel videos** */
+                    max-height: 400px; /* **Maximum height for carousel videos** */
+                    width: auto; /* Allow width to adjust */
+                    height: auto; /* Allow height to adjust */
+                    object-fit: contain; /* **Ensures the entire video is visible** */
                 }
-
-                /* Note: No @media query for stacking as per your request */
             </style>
             
             <div class="video-display-wrapper">
@@ -239,7 +236,7 @@
                     <video poster="" id="source-video" autoplay controls muted loop playsinline>
                         <source src="static/videos/Meta-World/cat_25_video.mp4" type="video/mp4">
                     </video>
-                    <span>Source Videos-BridgeData</span>
+                    <span>Source Videos</span>
                 </div>
 
                 <div id="results-carousel" class="carousel results-carousel">
