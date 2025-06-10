@@ -292,35 +292,45 @@
                 <h3 class="title is-3 is-centered has-text-centered">Results on CARLA</h3>
             </div>
 
-            <!-- 修改后的横向排列容器 -->
-            <div class="columns is-centered" style="gap: 1rem; margin-top: 0rem;">
-                <!-- 第一个视频 -->
-                <div class="column has-text-centered">
-                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
-                        <source src="static/videos/CARLA/carla_1.mp4" type="video/mp4">
+            <div class="columns is-centered" style="gap: 0.5rem; margin-top: 0rem; align-items: center;">
+
+                <div class="column is-6 has-text-centered">
+                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; max-height: 600px; border-radius: 8px;">
+                        <source src="static/videos/CARLA/carla_source.mp4" type="video/mp4">
                     </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 1 of VeoRL</span>
+                    <span class="has-text-weight-bold" style="font-size: 1rem; display: block; margin-top: 0.5rem;">Source Videos-NuScenes</span>
                 </div>
-                <!-- 第二个视频 -->
-                <div class="column has-text-centered">
-                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
-                        <source src="static/videos/CARLA/carla_2.mp4" type="video/mp4">
-                    </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 2 of VeoRL</span>
-                </div>
-                <!-- 第三个视频 -->
-                <div class="column has-text-centered">
-                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
-                        <source src="static/videos/Dv2/CARLA/carla_dv2_1.mp4" type="video/mp4">
-                    </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 1 of DreamerV2</span>
-                </div>
-                <!-- 第四个视频 -->
-                <div class="column has-text-centered">
-                    <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
-                        <source src="static/videos/Dv2/CARLA/carla_dv2_2.mp4" type="video/mp4">
-                    </video>
-                    <span class="has-text-weight-bold" style="font-size: 1.2rem">Example 2 of DreamerV2</span>
+
+                <div class="column is-6">
+                    <div class="columns is-centered is-mobile" style="gap: 0.25rem; margin-bottom: 0.25rem;">
+                        <div class="column is-half has-text-centered">
+                            <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                                <source src="static/videos/CARLA/carla_1.mp4" type="video/mp4">
+                            </video>
+                            <span class="has-text-weight-bold" style="font-size: 1rem; display: block; margin-top: 0.5rem;">Example 1 of VeoRL</span>
+                        </div>
+                        <div class="column is-half has-text-centered">
+                            <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                                <source src="static/videos/CARLA/carla_2.mp4" type="video/mp4">
+                            </video>
+                            <span class="has-text-weight-bold" style="font-size: 1rem; display: block; margin-top: 0.5rem;">Example 2 of VeoRL</span>
+                        </div>
+                    </div>
+
+                    <div class="columns is-centered is-mobile" style="gap: 0.25rem;">
+                        <div class="column is-half has-text-centered">
+                            <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                                <source src="static/videos/Dv2/CARLA/carla_dv2_1.mp4" type="video/mp4">
+                            </video>
+                            <span class="has-text-weight-bold" style="font-size: 1rem; display: block; margin-top: 0.5rem;">Example 1 of DreamerV2</span>
+                        </div>
+                        <div class="column is-half has-text-centered">
+                            <video poster="" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px;">
+                                <source src="static/videos/Dv2/CARLA/carla_dv2_2.mp4" type="video/mp4">
+                            </video>
+                            <span class="has-text-weight-bold" style="font-size: 1rem; display: block; margin-top: 0.5rem;">Example 2 of DreamerV2</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
