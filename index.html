@@ -170,77 +170,115 @@
             </div>
 
             <style>
-                /* 确保视频容器和文字垂直排列 */
+                /* Overall container for the fixed video and the carousel */
+                .video-display-wrapper {
+                    display: flex;
+                    justify-content: center; /* Center the content horizontally */
+                    gap: 30px; /* Space between the fixed video and the carousel */
+                    /* REMOVED: flex-wrap: wrap; to keep them on one line */
+                    align-items: flex-start; /* Align items to the top if they have different heights */
+                }
+
+                /* Style for the fixed video on the left */
+                .fixed-video-column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px; /* Space between the video and its label */
+                    /* Prevent this column from shrinking below its content's size */
+                    flex-shrink: 0;
+                }
+
+                .fixed-video-column video {
+                    height: 450px; /* Fixed height for consistency with carousel videos */
+                    object-fit: cover; /* Maintain aspect ratio */
+                    width: 450px; /* Give it a fixed width to ensure it doesn't try to shrink */
+                    max-width: 100%; /* Ensure it doesn't overflow its container if container is smaller than 450px */
+                }
+
+                /* Styles specifically for the carousel container */
+                .results-carousel {
+                    /* Allow the carousel to take available space and grow */
+                    flex-grow: 1;
+                    /* Prevent carousel from shrinking below a reasonable width */
+                    min-width: 400px; /* Adjust this value based on how small you want the carousel to get */
+                    /* Ensure the carousel doesn't overflow its horizontal space */
+                    overflow-x: auto; /* Adds horizontal scrollbar if content exceeds carousel width */
+                }
+
+
+                /* Styles for individual items within the carousel */
                 .carousel .item {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 10px;  /* 视频与文字间距 */
+                    gap: 10px; /* Space between video and text in each carousel item */
                 }
 
-                /* 文字样式 */
-                .carousel .item span {
-                    color: #333;        /* 深色文字 */
+                /* Styles for all video labels (fixed and carousel) */
+                .video-display-wrapper span {
+                    color: #333;
                     font-size: 1.2rem;
-                    /* font-weight: 500; */
-                    margin-top: 0px;     /* 顶部间距 */
-                    text-align: center; /* 文字居中 */
-                    /* font-size: 16px; */
                     font-weight: bold;
+                    text-align: center;
                 }
 
-                /* 控制视频高度留出文字空间 */
+                /* Styles for videos inside the carousel */
                 .carousel video {
-                    height: 450px;       /* 固定视频高度 */
-                    object-fit: cover;   /* 保持视频比例 */
-                    /* width: 100%; */
-                    /* max-width: 300px; */
-                    /* border-radius: 10px; */
+                    height: 450px; /* Fixed height for consistency */
+                    object-fit: cover; /* Maintain aspect ratio */
+                    width: 450px; /* Give carousel videos a fixed width as well */
+                    max-width: 100%; /* Ensure videos fit within carousel slides */
                 }
+
+                /* Note: No @media query for stacking as per your request */
             </style>
             
-            <div id="results-carousel" class="carousel results-carousel">
-                <div class="item item-fullbody">
-                    <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-                        <source src="static/videos/Meta-World/drawer_open.mp4"
-                                type="video/mp4">
+            <div class="video-display-wrapper">
+                <div class="fixed-video-column">
+                    <video poster="" id="source-video" autoplay controls muted loop playsinline>
+                        <source src="static/videos/Meta-World/cat_25_video.mp4" type="video/mp4">
                     </video>
-                    <span>Drawer Open</span>
+                    <span>Source Videos-BridgeData</span>
                 </div>
-                <div class="item item-steve">
-                    <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-                        <source src="static/videos/Meta-World/handle_press.mp4"
-                                type="video/mp4">
-                    </video>
-                    <span>Handle Press</span>
-                </div>
-                <div class="item item-fullbody">
-                    <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-                        <source src="static/videos/Meta-World/coffee_push.mp4"
-                                type="video/mp4">
-                    </video>
-                    <span>Coffee Push</span>
-                </div>
-                <div class="item item-chair-tp">
-                    <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                        <source src="static/videos/Meta-World/button_press.mp4"
-                                type="video/mp4">
-                    </video>
-                    <span>Button Press</span>
-                </div>
-                <div class="item item-blueshirt">
-                    <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-                        <source src="static/videos/Meta-World/handle_pull.mp4"
-                                type="video/mp4">
-                    </video>
-                    <span>Handle Pull</span>
-                </div>
-                <div class="item item-blueshirt">
-                    <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-                        <source src="static/videos/Meta-World/plate_slide.mp4"
-                                type="video/mp4">
-                    </video>
-                    <span>Plate Slide</span>
+
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item item-fullbody">
+                        <video poster="" id="drawer-open" autoplay controls muted loop playsinline>
+                            <source src="static/videos/Meta-World/drawer_open.mp4" type="video/mp4">
+                        </video>
+                        <span>Drawer Open</span>
+                    </div>
+                    <div class="item item-steve">
+                        <video poster="" id="handle-press" autoplay controls muted loop playsinline>
+                            <source src="static/videos/Meta-World/handle_press.mp4" type="video/mp4">
+                        </video>
+                        <span>Handle Press</span>
+                    </div>
+                    <div class="item item-fullbody">
+                        <video poster="" id="coffee-push" autoplay controls muted loop playsinline>
+                            <source src="static/videos/Meta-World/coffee_push.mp4" type="video/mp4">
+                        </video>
+                        <span>Coffee Push</span>
+                    </div>
+                    <div class="item item-chair-tp">
+                        <video poster="" id="button-press" autoplay controls muted loop playsinline>
+                            <source src="static/videos/Meta-World/button_press.mp4" type="video/mp4">
+                        </video>
+                        <span>Button Press</span>
+                    </div>
+                    <div class="item item-blueshirt">
+                        <video poster="" id="handle-pull" autoplay controls muted loop playsinline>
+                            <source src="static/videos/Meta-World/handle_pull.mp4" type="video/mp4">
+                        </video>
+                        <span>Handle Pull</span>
+                    </div>
+                    <div class="item item-blueshirt">
+                        <video poster="" id="plate-slide" autoplay controls muted loop playsinline>
+                            <source src="static/videos/Meta-World/plate_slide.mp4" type="video/mp4">
+                        </video>
+                        <span>Plate Slide</span>
+                    </div>
                 </div>
             </div>
         </div>
